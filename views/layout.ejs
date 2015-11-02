@@ -25,10 +25,20 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/venues">Venues</a></li>
 				<li><a href="/calendar">Calendar</a></li>
-				<li><a href="/login">Login</a></li>
+				<% if (!currentUser) { %>
+				<li><a href="/auth/login">Login</a></li>
+				<li><a href="/auth/signup">Sign Up</a></li>
+          		<% } else { %>
+				<p class="navbar-text">Signed in as <%= currentUser.name %></p>
+          		<li><a href="/auth/logout">Logout</a></li>
+          		<% } %>
 			</ul>
-		</div><!-- /.navbar-collapse -->
+		</div><!-- /.navbar -->
 	</nav>
+
+	<div class="container">
+      <% include partials/alerts %>
+    </div>
 	<div class="container">
 	<%- body %>
 	</div>

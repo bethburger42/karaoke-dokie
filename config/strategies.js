@@ -28,7 +28,7 @@ module.exports = {
     done(null, user.id);
   },
   deserializeUser: function(id, done) {
-    db.user.find(id).then(function(user) {
+    db.user.findById(id).then(function(user) {
       done(null, user.get());
     }).catch(done);
   }

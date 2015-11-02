@@ -20,9 +20,9 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     classMethods: {
-      associate: function(models) {
-        models.user.hasMany(models.provider);
-      },
+      // associate: function(models) {
+      //   models.user.hasMany(models.provider);
+      // },
       authenticate: function(email, password, callback) {
         this.find({where: {email: email}}).then(function(user) {
           if (user) {
