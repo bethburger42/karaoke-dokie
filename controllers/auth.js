@@ -58,10 +58,33 @@ router.route('/login')
     })(req, res);
   });
 
+router.get('/login/:provider', function(req, res) {
+  passport.authenticate(
+    req.params.provider,
+    {scope: ['public_profile', 'email']}
+  )(req, res);
+});
+
+router.get('/callback/:provider', function(req, res) {
+  passport.authenticate(req.params.provider, function(err, user, info) {
+    if (err) throw err;
+    if (user) {
+      req.login(user, function(err) {
+        if (err) throw err;
+        req.flash('success', 'You are now logged in with ' + req.params.provider);
+        res.redirect('/');
+      });
+    } else {
+      req.flash('danger', 'Error');
+      res.redirect('/auth/login');
+    }
+  })(req, res);
+});
+
 router.get('/logout', function(req, res) {
   req.logout();
   req.flash('info', 'You have been logged out.');
   res.redirect('/');
 });
 
-  module.exports = router;
+module.exports = router;

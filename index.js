@@ -28,7 +28,7 @@ passport.serializeUser(strategies.serializeUser);
 passport.deserializeUser(strategies.deserializeUser);
 
 passport.use(strategies.localStrategy);
-// passport.use(strategies.facebookStrategy);
+passport.use(strategies.facebookStrategy);
 
 app.use(function(req,res,next){
   res.locals.currentUser = req.user;
@@ -39,7 +39,7 @@ app.use(function(req,res,next){
 app.use('/auth', require('./controllers/auth'));
 app.use('/', require('./controllers/index'));
 
-// app.use("/venues", require("./controllers/venues"));
+app.use("/venues", require("./controllers/venues"));
 
 // app.use("/calendar", require("./controllers/calendar"));
 

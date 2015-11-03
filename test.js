@@ -1,22 +1,126 @@
-var express = require('express');
-var session = require('express-session');
-var app = express();
+var $ = require('cheerio')
+var request = require('request')
+var app = require('express')()
 
-var yelp = require("yelp").createClient({
-  consumer_key: process.env.YELP_CONSUMER_KEY, 
-  consumer_secret: process.env.YELP_CONSUMER_SECRET,
-  token: process.env.YELP_TOKEN,
-  token_secret: process.env.YELP_TOKEN_SECRET
+// app.get('/testpage', function(req, res){
+//   request('http://gizmodo.com/', function (err, resp, html){
+//     if(!err && resp.statusCode == 200) {
+//       var parsedHTML = $.load(html)
+//       var imageURLs = []
+//       // WARNING - Callback parameters for map are in a different order for Cheerio
+//       parsedHTML('img.lazy-loaded').map(function(i, link){
+//         var src = $(link).attr('src')
+//         // if(!(src) || !(src.match('.jpg')||src.match('.png'))) return
+//         imageURLs.push(src)
+//       })
+//       // var imageTags = imageURLs.reduce(function(total, b){
+//       //   return total + '<p><img src="'+ b +'" /></p>'
+//       // }, '')
+//       res.send(imageURLs)
+//     }
+//   })
+// })
+
+// app.get('/testpage', function(req, res){
+//   request('http://gizmodo.com/', function (err, resp, html){
+//     if(!err && resp.statusCode == 200) {
+//       var parsedHTML = $.load(html)
+//       var textArray = []
+//       parsedHTML('.first-text').map(function(i, paragraph){
+//         var text = $(paragraph).text()
+//         if(!(text)) return
+//         textArray.push(text)
+//       })
+//       res.send(textArray)
+//     }
+//   })
+// })
+
+// app.get('/testpage', function(req, res){
+//   request('http://gizmodo.com/', function (err, resp, html){
+//     if(!err && resp.statusCode == 200) {
+//       var parsedHTML = $.load(html)
+//       var textArray = []
+//       parsedHTML('.headline').map(function(i, headline){
+//         var text = $(headline).text()
+//         if(!(text)) return
+//         textArray.push(text)
+//       })
+//       res.send(textArray)
+//     }
+//   })
+// })
+
+
+app.get('/testpage', function(req, res) {
+	// var searchDate = req.query.userDate;
+	var searchDate = "2015-11-08";
+	var searchURL = "http://www.thestranger.com/events//" + searchDate + "?keywords=karaoke";
+	request(searchURL, function (err, resp, html){
+		if(!err && resp.statusCode == 200) {
+			var parsedHTML = $.load(html);
+	    	var venueArray = [];
+	    	parsedHTML(".calendar-post-venue a").map(function(i, calvenue) {
+		    	var text = $(calvenue).text();
+		      	if(!(text)) return;
+		      	venueArray.push(text);
+	    	})
+
+			var timeArray = [];
+	    	parsedHTML(".calendar-post-date").map(function(i, caltime) {
+		    	var text = $(caltime).text();
+		      	if(!(text)) return;
+		      	timeArray.push(text);
+	    	})
+
+	    	var venuesAndTimes = {venues: venueArray, times: timeArray};
+	    	res.send(venuesAndTimes);
+		}
+	})
 });
 
-// See http://www.yelp.com/developers/documentation/v2/search_api
-yelp.search({term: "karaoke", location: "Seattle", sort: 2, limit: 10, category_filter: "nightlife"}, function(error, data) {
-  console.log(error);
-  console.log(data);
-});
 
-app.get('/', function(req, res) {
-	res.render('index');
-});
+
+
+// app.get('/testpage', function(req, res){
+//   request('http://gizmodo.com/', function (err, resp, html){
+//     if(!err && resp.statusCode == 200) {
+//       var parsedHTML = $.load(html)
+//       var linkArray = []
+//       parsedHTML('.headline a').map(function(i, headline){
+//         var text = $(headline).attr('href')
+//         if(!(text)) return
+//         linkArray.push(text)
+//       })
+//       var textArray = []
+//       parsedHTML('.headline a').map(function(i, headline){
+//         var text = $(headline).text()
+//         if(!(text)) return
+//         textArray.push(text)
+//       })
+//       var linksAndHeadlines = {links: linkArray, headlines: textArray}
+//       res.send(linksAndHeadlines)
+//     }
+//   })
+// })
+
+// app.get('/testpage', function(req, res){
+//   request('http://gizmodo.com/', function (err, resp, html){
+//     if(!err && resp.statusCode == 200) {
+//       var parsedHTML = $.load(html)
+//       var imageURLs = []
+//       parsedHTML('article img').map(function(i, link){
+//         var src = $(link).data('src')
+//         if(!(src) || !(src.match('.jpg')||src.match('.png'))) return
+//         imageURLs.push(src)
+//       })
+//       // var imageTags = imageURLs.reduce(function(total, b){
+//       //   return total + '<p><img src="'+ b +'" /></p>'
+//       // }, '')
+//       res.send(imageURLs)
+//       // res.send(imageTags)
+//     }
+//   })
+// })
 
 app.listen(3000);

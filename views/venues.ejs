@@ -1,0 +1,8 @@
+<h1>Venues</h1>
+<div class="well">
+<h4>Yelp Top 10</h4>	
+<% data.businesses.forEach(function(business, index) { %>
+	<a href="<%= business.url %>" target="_blank"><%= index +1 %>. <%= business.name %></a> <br />
+<% });  %>
+<p>(By clicking on the above links, you will open the business listing on Yelp.)</p>
+</div>
