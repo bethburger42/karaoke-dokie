@@ -21,7 +21,7 @@ app.use(passport.session());
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/static')));
+app.use(express.static(__dirname + '/static'));
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 app.use(flash());
