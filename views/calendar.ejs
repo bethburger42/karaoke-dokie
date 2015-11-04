@@ -1,3 +1,19 @@
 <h1>Calendar</h1>
 
-Date: <div id="calendar"></div>
+<form>
+ <p>Enter Date: <input type="text" id="calendar" name="searchDate"></p>
+ <p><input type="submit" value="I want karaoke!" /></p>
+</form>
+<h3>Venue | Time</h3>
+<div class="well">
+<p>
+<% if (venues.length > 0) { %>
+	<% venues.forEach(function(venue) { %>
+		<%= venue.venue %> - 	
+		<%= venue.date %>
+		<br /><hr>
+	<% }); %>
+<% } %>
+</p>
+</div>
+

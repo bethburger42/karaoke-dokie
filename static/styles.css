@@ -1,5 +1,6 @@
 body {
 	font-family: ‘Ubuntu’, Arial, sans-serif; font-weight: 400;
+	background-color: #B665CF;
 
 }
 
@@ -19,7 +20,21 @@ h2 {
   width: 100%;
   font-size: 42px;
   color: #465058;
-  margin: 40px 0 0;
+  margin: 10px 0 0;
+}
+
+#yelp-list {
+	border: 2px solid black;
+	border-radius: 5%;
+	padding: 5px;
+}
+
+span {
+	text-indent: 2em;
+}
+
+#map-box {
+	padding: 15px;
 }
 
 .slide-row {
@@ -76,7 +91,7 @@ h2 {
   height: 100%;
 }
 .slide h2 {
-  margin: 25% 0 20px;
+  margin: 10% 25%;
   color: #fff;
 }
 .slide p {

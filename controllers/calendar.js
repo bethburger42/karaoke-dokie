@@ -7,30 +7,37 @@ var async = require('async');
 var passport = require('passport');
 
 
+// router.get("/", function(req, res) {
+
+// 	res.render("calendar");
+// });
+
 router.get("/", function(req, res) {
-	// var searchDate = req.query.userDate;
-	var searchDate = "2015-11-08";
+	console.log("WE'RE ON CALENDAR!!!!!!!!!");
+	var searchDate = req.query.searchDate;
 	var searchURL = "http://www.thestranger.com/events//" + searchDate + "?keywords=karaoke";
+	console.log(searchURL);
 	request(searchURL, function (err, resp, html){
 		if(!err && resp.statusCode == 200) {
 			var parsedHTML = $.load(html);
+			var posts = parsedHTML("body").find(".calendar-post");
 	    	var venueArray = [];
-	    	parsedHTML(".calendar-post-venue a").map(function(i, calvenue) {
-		    	var text = $(calvenue).text();
-		      	if(!(text)) return;
-		      	venueArray.push(text);
-	    	})
-
-			var timeArray = [];
-	    	parsedHTML(".calendar-post-date").map(function(i, caltime) {
-		    	var text = $(caltime).text();
-		      	if(!(text)) return;
-		      	timeArray.push(text);
-	    	})
-
-	    	var venuesAndTimes = {venues: venueArray, times: timeArray};
-	    	res.render("venues", {venues: venueArray, times: timeArray});
-	    	res.send(venuesAndTimes);
+	    	console.log(posts);
+	    	if (posts.length) {
+	    		var l = posts.length;
+	    		var post;
+	    		for (var i=0;i<l;++i) {
+	    			post = $(posts[i]);
+	    			var venue = post.find(".calendar-post-venue a").text();
+		    		var date = post.find(".calendar-post-date").text();
+		    		venueArray.push({
+		    			venue: venue,
+		    			date: date
+		    		});
+	    		}
+			}
+	    	var venuesAndTimes = {venues: venueArray};
+	    	res.render("calendar", venuesAndTimes);
 		}
 	})
 });
