@@ -5,6 +5,7 @@ var db = require('../models');
 var router = express.Router();	
 var async = require('async');
 
+
 router.get("/", function(req, res) {
 	// var searchDate = req.query.userDate;
 	var searchDate = "2015-11-08";
@@ -27,6 +28,7 @@ router.get("/", function(req, res) {
 	    	})
 
 	    	var venuesAndTimes = {venues: venueArray, times: timeArray};
+	    	res.render("venues", {venues: venueArray, times: timeArray});
 	    	res.send(venuesAndTimes);
 		}
 	})

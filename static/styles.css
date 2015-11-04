@@ -1,14 +1,17 @@
 body {
-	
-	/*background-image: url("img/party-music.jpg");*/
-/*	background-image: url("img/karaoke-background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	color: white;*/
+	font-family: ‘Ubuntu’, Arial, sans-serif; font-weight: 400;
+
 }
 
-/*.main-row img {
-	width: 25%;
+.navbar-text {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+/*h1 { 
+	font-family: ‘Jura’, Arial, sans-serif; font-weight: 600; 
+
 }*/
 
 h2 {

@@ -47,4 +47,4 @@ app.use("/calendar", require("./controllers/calendar"));
 
 // app.use("/songs", require("./controllers/songs"));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
