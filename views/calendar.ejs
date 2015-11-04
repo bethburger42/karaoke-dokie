@@ -9,7 +9,7 @@
 <p>
 <% if (venues.length > 0) { %>
 	<% venues.forEach(function(venue) { %>
-		<%= venue.venue %> - 	
+		<%= venue.venue %>, <%= venue.neighborhood %> - 	
 		<%= venue.date %>
 		<br /><hr>
 	<% }); %>

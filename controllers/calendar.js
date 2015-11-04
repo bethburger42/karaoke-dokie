@@ -29,10 +29,12 @@ router.get("/", function(req, res) {
 	    		for (var i=0;i<l;++i) {
 	    			post = $(posts[i]);
 	    			var venue = post.find(".calendar-post-venue a").text();
+	    			var neighborhood = post.find(".calendar-post-neighborhood").text();
 		    		var date = post.find(".calendar-post-date").text();
 		    		venueArray.push({
 		    			venue: venue,
-		    			date: date
+		    			date: date,
+		    			neighborhood: neighborhood
 		    		});
 	    		}
 			}
