@@ -7,6 +7,7 @@ var flash = require('connect-flash');
 var bodyParser = require("body-parser");
 var ejsLayouts = require('express-ejs-layouts');
 var db = require("./models");
+var path = require('path');
 
 
 app.use(session({
@@ -20,6 +21,7 @@ app.use(passport.session());
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '/static')));
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 app.use(flash());
@@ -41,7 +43,7 @@ app.use('/', require('./controllers/index'));
 
 app.use("/venues", require("./controllers/venues"));
 
-// app.use("/calendar", require("./controllers/calendar"));
+app.use("/calendar", require("./controllers/calendar"));
 
 // app.use("/songs", require("./controllers/songs"));
 

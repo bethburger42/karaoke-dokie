@@ -1,8 +1,21 @@
 <h1>Venues</h1>
-<div class="well">
+<div id="yelp-list">
 <h4>Yelp Top 10</h4>	
-<% data.businesses.forEach(function(business, index) { %>
-	<a href="<%= business.url %>" target="_blank"><%= index +1 %>. <%= business.name %></a> <br />
+<p><% data.businesses.forEach(function(business, index) { %>
+	<%= index +1 %>. <a href="<%= business.url %>" target="_blank"> <%= business.name %></a> <%= business.location.display_address %> <br />
+
 <% });  %>
+</p>
 <p>(By clicking on the above links, you will open the business listing on Yelp.)</p>
+</div>
+
+<div id="map-box">
+<form id="input_form">
+	<input type="text" id="text_input" />
+</form>
+<div id="mapholder">
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?&v=3.21&callback=initMap&libraries=places&key=AIzaSyAfTNzIYboU0DwljzFihZn4IiBxcCt1CJQ"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/mapinfo.js"></script>
 </div>
