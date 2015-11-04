@@ -4,6 +4,7 @@ var express = require('express');
 var db = require('../models');
 var router = express.Router();	
 var async = require('async');
+var passport = require('passport');
 
 
 router.get("/", function(req, res) {
