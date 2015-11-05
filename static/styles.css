@@ -1,6 +1,6 @@
 body {
 	font-family: ‘Ubuntu’, Arial, sans-serif; font-weight: 400;
-	background-color: #B665CF;
+	background-color: #B665CF
 
 }
 
@@ -10,10 +10,11 @@ body {
 	margin-top: 10px;
 }
 
-/*h1 { 
-	font-family: ‘Jura’, Arial, sans-serif; font-weight: 600; 
-
-}*/
+h1 { 
+	font-family: ‘Ubuntu’, Arial, sans-serif; font-weight: 700; 
+	color: #fff;
+	/*color: #1216CF;*/
+}
 
 h2 {
   font-weight: 400;
@@ -23,24 +24,46 @@ h2 {
   margin: 10px 0 0;
 }
 
-#yelp-list {
-	border: 2px solid black;
-	border-radius: 5%;
-	padding: 5px;
+.btn-block {
+	width: 200px;
+	margin-bottom: 2%;
 }
 
-span {
-	text-align: center;
-	/*text-indent: 2em;*/
+.btn-block a {
+	text-decoration: none;
+	color: #fff;
 }
 
-.slide-row {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0;
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.redkaraoke {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.redkaraoke img {
+	position: absolute;
+    top: 0;
+    left: 0;
+	width:100%;
+	height: 100%;
 }
 
 /*Grid*/
+
 .grid-full {
   width: 100%;
   float: left;
@@ -49,41 +72,46 @@ span {
   width: 50%;
   float: left;
 }
-/*.grid-third {
-  width: 27.33333%;
-  margin: 0 3%;
-  float: left;
-}
-.grid-fourth {
-  width: 25%;
-  float: left;
-}
-.grid-fifth {
-  width: 20%;
-  float: left;
-}*/
+
+/*Boxes*/
 
 #yelp-list {
 	padding-left: 2%;
 	float: left;
+	border: 2px solid blue;
+	border-radius: 5%;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
+	box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);	
 }
-
 #map-box {
 	float: left;
 	margin-left: 5%;
 }
-
 #mapholder {
 	width: 500px;
 	height: 325px;
 	padding: 2%;
 }
-
-.fb-login-button {
-	margin: 10px 0 10px;
+.calendar-box {
+	width: 40%;
+	padding: 0 2%;
+	margin-bottom: 3%;
+	border: 2px solid blue;
+	border-radius: 5%;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
+	box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
 }
 
 /*Slides*/
+
+.slide-row {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  clear: both;
+}
 .slides {
   width: 100%;
   height: 100%;
@@ -130,6 +158,7 @@ span {
 }
 
 /*Footer*/
+
 footer {
   margin: 80px 0;
   float: left;
@@ -187,7 +216,7 @@ footer {
   body {
     background: darkred;
   }
-  #mapholder {
+   #mapholder {
 	width: 350px;
 	height: 250px;
   }

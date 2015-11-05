@@ -37,7 +37,12 @@ router.get("/", function(req, res) {
 		    		});
 	    		}
 			}
-			// var displayDate = searchDate.toString();
+			
+			
+			
+			// var dateFormat = $("searchDate").text();
+			// var displayDate = $.datepicker.formatDate('MM dd, yy', new Date(dateFormat));
+
 	    	var venuesAndTimes = {venues: venueArray, date: searchDate};
 	    	res.render("calendar", venuesAndTimes);
 	    	// console.log(venuesAndTimes);

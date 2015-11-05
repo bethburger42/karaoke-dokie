@@ -1,22 +1,22 @@
 <h1>Calendar</h1>
 
-<form>
- <p>Enter Date: <input type="text" id="calendar" name="searchDate"></p>
- <p><input type="submit" value="I want karaoke!" /></p>
+
+<form class="calendar-box">
+ <p><h4>Enter Date:</h4> <input type="text" id="calendar" name="searchDate"></p>
+ <p><input type="submit" class="btn btn-primary" value="I want karaoke!" /></p>
 </form>
 
-<div class="well">
+<div class="well grid-half">
 
 <% if (venues.length > 0) { %>
-<p>
-<h2>Karaoke Happening <%= date %></h2>
-<h3>Venues | Times </h3>
+<!-- <p> -->
+<h3>Karaoke Happening <%= date %></h3>
+<h4>Venue | Neighborhood | Time </h4><hr>
 	<% venues.forEach(function(venue) { %>
-		<a href="http://www.thestranger.com/<%= venue.link %>"><%= venue.venue %></a>, <%= venue.neighborhood %> - 	
-		<%= venue.date %>
+		<a href="http://www.thestranger.com/<%= venue.link %>"><%= venue.venue %></a>, <%= venue.neighborhood %> - <%= venue.date %>
 		<br /><hr>
 	<% }); %>
-</p>
+<!-- </p> -->
 <% } %>
 </div>
 

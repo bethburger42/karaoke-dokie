@@ -16,7 +16,6 @@ router.get("/", function(req, res) {
 	  console.log(error);
 	  console.log(data);
 	  res.render("venues", {data: data});
-	  // res.send({data: data});
 	});
 });
 
