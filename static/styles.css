@@ -210,6 +210,14 @@ footer {
 	width: 350px;
 	height: 250px;
   }
+  .grid-half {
+    width: 80%;
+    margin: 0 10%;
+  }
+  .slide img {
+    width: 80%;
+    margin: 100px 10%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -219,6 +227,14 @@ footer {
    #mapholder {
 	width: 350px;
 	height: 250px;
+  }
+  .grid-half {
+    width: 80%;
+    margin: 0 10%;
+  }
+  .slide img {
+    width: 80%;
+    margin: 100px 10%;
   }
 }
 
