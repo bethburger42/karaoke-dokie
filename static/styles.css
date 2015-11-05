@@ -30,11 +30,8 @@ h2 {
 }
 
 span {
-	text-indent: 2em;
-}
-
-#map-box {
-	padding: 15px;
+	text-align: center;
+	/*text-indent: 2em;*/
 }
 
 .slide-row {
@@ -52,7 +49,7 @@ span {
   width: 50%;
   float: left;
 }
-.grid-third {
+/*.grid-third {
   width: 27.33333%;
   margin: 0 3%;
   float: left;
@@ -64,20 +61,26 @@ span {
 .grid-fifth {
   width: 20%;
   float: left;
-}
+}*/
 
 #yelp-list {
-	padding-right: 5%;
+	padding-left: 2%;
 	float: left;
 }
 
 #map-box {
 	float: left;
+	margin-left: 5%;
 }
 
 #mapholder {
-	width: 400px;
-	height: 250px;
+	width: 500px;
+	height: 325px;
+	padding: 2%;
+}
+
+.fb-login-button {
+	margin: 10px 0 10px;
 }
 
 /*Slides*/
@@ -163,13 +166,10 @@ footer {
 @media (max-width: 960px) {
   body {	
 
-
   }
-}
-
-@media (max-width: 480px) {
-  body {
-    background: darkred;
+    #mapholder {
+	width: 350px;
+	height: 250px;
   }
 }
 
@@ -177,8 +177,19 @@ footer {
   body {
     background: seagreen;
   }
-  p {
-    color: white;
+  #mapholder {
+	width: 350px;
+	height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background: darkred;
+  }
+  #mapholder {
+	width: 350px;
+	height: 250px;
   }
 }
 

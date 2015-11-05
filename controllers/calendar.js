@@ -13,33 +13,34 @@ var passport = require('passport');
 // });
 
 router.get("/", function(req, res) {
-	console.log("WE'RE ON CALENDAR!!!!!!!!!");
 	var searchDate = req.query.searchDate;
 	var searchURL = "http://www.thestranger.com/events//" + searchDate + "?keywords=karaoke";
-	console.log(searchURL);
 	request(searchURL, function (err, resp, html){
 		if(!err && resp.statusCode == 200) {
 			var parsedHTML = $.load(html);
 			var posts = parsedHTML("body").find(".calendar-post");
 	    	var venueArray = [];
-	    	console.log(posts);
 	    	if (posts.length) {
 	    		var l = posts.length;
 	    		var post;
 	    		for (var i=0;i<l;++i) {
 	    			post = $(posts[i]);
 	    			var venue = post.find(".calendar-post-venue a").text();
+	    			var link = post.find(".calendar-post-venue a").attr("href");
 	    			var neighborhood = post.find(".calendar-post-neighborhood").text();
 		    		var date = post.find(".calendar-post-date").text();
 		    		venueArray.push({
 		    			venue: venue,
-		    			date: date,
-		    			neighborhood: neighborhood
+		    			link: link,
+		    			neighborhood: neighborhood,
+		    			date: date
 		    		});
 	    		}
 			}
-	    	var venuesAndTimes = {venues: venueArray};
+			// var displayDate = searchDate.toString();
+	    	var venuesAndTimes = {venues: venueArray, date: searchDate};
 	    	res.render("calendar", venuesAndTimes);
+	    	// console.log(venuesAndTimes);
 		}
 	})
 });

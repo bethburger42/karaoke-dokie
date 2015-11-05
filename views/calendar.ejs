@@ -4,16 +4,19 @@
  <p>Enter Date: <input type="text" id="calendar" name="searchDate"></p>
  <p><input type="submit" value="I want karaoke!" /></p>
 </form>
-<h3>Venue | Time</h3>
+
 <div class="well">
-<p>
+
 <% if (venues.length > 0) { %>
+<p>
+<h2>Karaoke Happening <%= date %></h2>
+<h3>Venues | Times </h3>
 	<% venues.forEach(function(venue) { %>
-		<%= venue.venue %>, <%= venue.neighborhood %> - 	
+		<a href="http://www.thestranger.com/<%= venue.link %>"><%= venue.venue %></a>, <%= venue.neighborhood %> - 	
 		<%= venue.date %>
 		<br /><hr>
 	<% }); %>
-<% } %>
 </p>
+<% } %>
 </div>
 
