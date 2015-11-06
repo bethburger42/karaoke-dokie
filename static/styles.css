@@ -90,7 +90,7 @@ h2 {
 	padding: 2%;
 }
 .calendar-box {
-	width: 40%;
+	width: 70%;
 	padding: 0 2%;
 	margin-bottom: 3%;
 	border: 2px solid blue;
@@ -98,6 +98,38 @@ h2 {
 	-webkit-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
 	-moz-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
 	box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
+}
+
+.calendar-featured {
+	position:relative;
+	float:left;
+	clear:none;
+	overflow:hidden;
+
+}
+
+.calendar-featured img {
+	position:relative;
+	z-index:1;
+	width: 90%;
+	margin: 5%;
+	border: 1px solid gray;
+	border-radius: 5%;
+}
+
+.calendar-featured .desc {
+	  display:block;
+	  position:absolute;
+	  width:100%;
+	  top:30%;
+	  left:0;
+	  z-index:2;
+	  text-align:center;
+}
+
+h4 span {
+	color: #fff;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 /*Slides*/
@@ -111,14 +143,14 @@ h2 {
 .slides {
   width: 100%;
   height: 100%;
-  margin: 0 auto 40px;
+  margin: 0 auto 50px;
 }
 .slide {
   width: 100%;
   height: 100%;
 }
 .slide-text {
-	padding: 5% 5% 2%;
+	padding: 5% 5% 1%;
 }
 
 .slide p {
@@ -136,8 +168,8 @@ h2 {
   opacity: 1;
 }
 .slide img {
-  width: 70%;
-  margin: 50px 50% 50px 10%;
+  width: 80%;
+  margin: 10%;
 }
 .blue {
   background: #3E89BE;
@@ -207,14 +239,14 @@ footer {
   }
   .grid-half {
     width: 80%;
-    margin: 0 10%;
+    margin: 5% 10%;
   }
   .slide img {
     width: 80%;
-    margin: 100px 10%;
+    margin: 5% 10%;
   }
   .slide p {
-  	font-size: 16px;	
+  	font-size: 18px;	
   }
 }
 
@@ -228,14 +260,14 @@ footer {
   }
   .grid-half {
     width: 80%;
-    margin: 0 10%;
+    margin: 5% 10%;
   }
   .slide img {
     width: 80%;
-    margin: 100px 10%;
+    margin: 5% 10%;
   }
   .slide p {
-  	font-size: 12px;
+  	font-size: 16px;
   }
 }
 

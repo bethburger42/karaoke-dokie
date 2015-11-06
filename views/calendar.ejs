@@ -1,22 +1,34 @@
 <h1>Calendar</h1>
 
+<div class="row">
+	<div class="col-md-6">
+		<form class="calendar-box">
+ 			<p><h4>Enter Date:</h4> <input type="text" id="calendar" name="searchDate"></p>
+ 			<p><input type="submit" class="btn btn-primary" value="I want karaoke!" /></p>
+		</form>
+		<div class="well">
 
-<form class="calendar-box">
- <p><h4>Enter Date:</h4> <input type="text" id="calendar" name="searchDate"></p>
- <p><input type="submit" class="btn btn-primary" value="I want karaoke!" /></p>
-</form>
+			<% if (venues.length > 0) { %>
+			<!-- <p> -->
+			<h3>Karaoke Happening <%= date %></h3>
+			<h4>Venue | Neighborhood | Time </h4><hr>
+				<% venues.forEach(function(venue) { %>
+					<a href="http://www.thestranger.com/<%= venue.link %>"><%= venue.venue %></a>, <%= venue.neighborhood %> - <%= venue.date %>
+					<br /><hr>
+				<% }); %>
+			<!-- </p> -->
+			<% } %>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="calendar-featured">
+			<a href="http://themonkeypub.com"><img src="/images/monkey-pub.png" target="_blank"></a>
+			<h4 class="desc"><span>Featured Venue: Monkey Pub</span>s</h4>
 
-<div class="well grid-half">
+		</div>
+	</div>
 
-<% if (venues.length > 0) { %>
-<!-- <p> -->
-<h3>Karaoke Happening <%= date %></h3>
-<h4>Venue | Neighborhood | Time </h4><hr>
-	<% venues.forEach(function(venue) { %>
-		<a href="http://www.thestranger.com/<%= venue.link %>"><%= venue.venue %></a>, <%= venue.neighborhood %> - <%= venue.date %>
-		<br /><hr>
-	<% }); %>
-<!-- </p> -->
-<% } %>
-</div>
+</div> 
+
+
 
