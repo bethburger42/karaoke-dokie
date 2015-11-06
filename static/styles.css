@@ -3,38 +3,31 @@ body {
 	background-color: #B665CF
 
 }
-
 .navbar-brand img {
 	vertical-align: top;
 }
-
 h1 { 
 	font-family: ‘Ubuntu’, Arial, sans-serif; font-weight: 700; 
 	color: #fff;
 }
-
 h2 {
   font-weight: 400;
   font-size: 42px;
   color: #fff;
 }
-
 .btn-block {
 	width: 200px;
 	margin-bottom: 2%;
 }
-
 .btn-block a {
 	text-decoration: none;
 	color: #fff;
 }
-
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
 }
-
 .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -42,13 +35,11 @@ h2 {
     width: 100%;
     height: 100%;
 }
-
 .redkaraoke {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
 }
-
 .redkaraoke img {
 	position: absolute;
     top: 0;
@@ -98,15 +89,12 @@ h2 {
 	-moz-box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
 	box-shadow: 10px 10px 5px 0px rgba(32,70,168,1);
 }
-
 .calendar-featured {
 	position:relative;
 	float:left;
 	clear:none;
 	overflow:hidden;
-
 }
-
 .calendar-featured img {
 	position:relative;
 	z-index:1;
@@ -115,7 +103,6 @@ h2 {
 	border: 1px solid gray;
 	border-radius: 5%;
 }
-
 .calendar-featured .desc {
 	  display:block;
 	  position:absolute;
@@ -125,7 +112,6 @@ h2 {
 	  z-index:2;
 	  text-align:center;
 }
-
 h4 span {
 	color: #fff;
 	background: rgba(0, 0, 0, 0.7);
@@ -151,7 +137,6 @@ h4 span {
 .slide-text {
 	padding: 5% 5% 1%;
 }
-
 .slide p {
   width: 100%;
   font-size: 26px;
@@ -197,9 +182,7 @@ footer {
 .social li a {
   display: inline-block;
   width: 36px;
-  /*height: 12px;*/
   border-radius: 50%;
-  /*border: 10px solid #ccc;*/
   opacity: .65;
   transition: .35s linear;
 }

@@ -3,14 +3,7 @@ var request = require('request')
 var express = require('express');
 var db = require('../models');
 var router = express.Router();	
-var async = require('async');
 var passport = require('passport');
-
-
-// router.get("/", function(req, res) {
-
-// 	res.render("calendar");
-// });
 
 router.get("/", function(req, res) {
 	var searchDate = req.query.searchDate;
@@ -37,15 +30,8 @@ router.get("/", function(req, res) {
 		    		});
 	    		}
 			}
-			
-			
-			
-			// var dateFormat = $("searchDate").text();
-			// var displayDate = $.datepicker.formatDate('MM dd, yy', new Date(dateFormat));
-
 	    	var venuesAndTimes = {venues: venueArray, date: searchDate};
 	    	res.render("calendar", venuesAndTimes);
-	    	// console.log(venuesAndTimes);
 		}
 	})
 });
