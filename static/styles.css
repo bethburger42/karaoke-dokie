@@ -4,10 +4,8 @@ body {
 
 }
 
-.navbar-text {
-	font-size: 1.2em;
-	font-weight: bold;
-	margin-top: 10px;
+.navbar-brand img {
+	vertical-align: top;
 }
 
 h1 { 
@@ -18,10 +16,8 @@ h1 {
 
 h2 {
   font-weight: 400;
-  width: 100%;
   font-size: 42px;
-  color: #465058;
-  margin: 10px 0 0;
+  color: #fff;
 }
 
 .btn-block {
@@ -121,13 +117,12 @@ h2 {
   width: 100%;
   height: 100%;
 }
-.slide h2 {
-  margin: 10% 25%;
-  color: #fff;
+.slide-text {
+	padding: 5% 5% 2%;
 }
+
 .slide p {
-  width: 90%;
-  margin: 0 20% 40px;
+  width: 100%;
   font-size: 26px;
   color: #fff;
 }
@@ -160,7 +155,7 @@ h2 {
 /*Footer*/
 
 footer {
-  margin: 80px 0;
+  margin: 20px 0;
   float: left;
   width: 100%;
 }
@@ -170,23 +165,23 @@ footer {
 }
 .social li a {
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 36px;
+  /*height: 12px;*/
   border-radius: 50%;
-  border: 10px solid #ccc;
+  /*border: 10px solid #ccc;*/
   opacity: .65;
   transition: .35s linear;
 }
 .social li a:hover {
   opacity: 1;
 }
-.social .pink {
+.social .pinterest {
   border-color: #FF8DB3
 }
-.social .light-blue {
+.social .twitter {
   border-color: #7CCEEE
 }
-.social .dark-blue {
+.social .facebook {
   border-color: #3E89BE
 }
 
@@ -218,6 +213,9 @@ footer {
     width: 80%;
     margin: 100px 10%;
   }
+  .slide p {
+  	font-size: 16px;	
+  }
 }
 
 @media (max-width: 480px) {
@@ -235,6 +233,9 @@ footer {
   .slide img {
     width: 80%;
     margin: 100px 10%;
+  }
+  .slide p {
+  	font-size: 12px;
   }
 }
 
