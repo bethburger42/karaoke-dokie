@@ -11,7 +11,7 @@
 		<!-- Displays all Karaoke events matching date selected -->
 			<% if (venues.length > 0) { %>
 			<h3>Karaoke Happening <%= date %></h3>
-			<h4>Venue | Neighborhood | Time </h4><hr>
+			<h5>Venue | Neighborhood | Time </h5><hr>
 				<% venues.forEach(function(venue) { %>
 					<a href="http://www.thestranger.com/<%= venue.link %>"><%= venue.venue %></a>, <%= venue.neighborhood %> - <%= venue.date %>
 					<br /><hr>
@@ -23,7 +23,7 @@
 	<!-- Featured Karaoke venue -->
 		<div class="calendar-featured">
 			<a href="http://themonkeypub.com"><img src="/images/monkey-pub.png" target="_blank"></a>
-			<h4 class="desc"><span>Featured Venue: Monkey Pub</span>s</h4>
+			<h4 class="desc"><span>Featured Venue: The Monkey Pub</span></h4>
 		</div>
 	</div>
 </div> 

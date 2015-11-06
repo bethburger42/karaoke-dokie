@@ -1,7 +1,7 @@
 <h1>Venues</h1>
 <div class="well" id="yelp-list">
 <!-- Displays Yelp's 10 top highest rated venues -->
-<h4><a href="http://www.yelp.com"><img src="images/yelp_logo_75x38.png" alt="Yelp"></a> Top 10</h4>	
+<h3><a href="http://www.yelp.com"><img src="images/yelp_logo_75x38.png" alt="Yelp"></a> Top 10</h3>	
 <p><% data.businesses.forEach(function(business, index) { %>
 	<%= index +1 %>. <a href="<%= business.url %>" target="_blank"> <%= business.name %></a> <br /><span><%= business.location.display_address %></span> <br />
 
@@ -12,7 +12,7 @@
 
 <div id="map-box">
 <form id="input_form">
-<label for="map_location">Search for karaoke:</label>
+<label for="map_location"><h4>Search for karaoke:</h4></label>
 	<input type="text" id="text_input" name="map_location" placeholder="Search" />
 </form>
 <div id="mapholder">

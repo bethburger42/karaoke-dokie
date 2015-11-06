@@ -15,6 +15,12 @@ h2 {
   font-size: 42px;
   color: #fff;
 }
+h4 {
+  color: #fff;
+}
+h5 {
+  font-size: 16px;
+}
 .btn-block {
 	width: 200px;
 	margin-bottom: 2%;
