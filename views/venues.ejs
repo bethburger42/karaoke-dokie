@@ -1,5 +1,6 @@
 <h1>Venues</h1>
 <div class="well" id="yelp-list">
+<!-- Displays Yelp's 10 top highest rated venues -->
 <h4><a href="http://www.yelp.com"><img src="images/yelp_logo_75x38.png" alt="Yelp"></a> Top 10</h4>	
 <p><% data.businesses.forEach(function(business, index) { %>
 	<%= index +1 %>. <a href="<%= business.url %>" target="_blank"> <%= business.name %></a> <br /><span><%= business.location.display_address %></span> <br />

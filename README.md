@@ -22,6 +22,8 @@
 	<li>Yelp API</li>
 	<li>Google Maps API</li>
 	<li>Facebook Apps</li>
+	<li>Google Fonts</li>
+	<li>Font Awesome</li>
 </ul>
 
 <h3>Approach Taken</h3>
