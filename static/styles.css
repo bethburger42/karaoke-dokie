@@ -11,7 +11,6 @@ body {
 h1 { 
 	font-family: ‘Ubuntu’, Arial, sans-serif; font-weight: 700; 
 	color: #fff;
-	/*color: #1216CF;*/
 }
 
 h2 {
@@ -248,6 +247,9 @@ footer {
   .slide p {
   	font-size: 18px;	
   }
+  .navbar-brand img {
+  	margin-top: -40px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -268,6 +270,9 @@ footer {
   }
   .slide p {
   	font-size: 16px;
+  }
+  .navbar-brand img {
+  	margin-top: -50px;
   }
 }
 

@@ -1,5 +1,3 @@
-// var geocoder = require('geocoder');
-
 var map;
 var markers = [];
 var preconditionsMet = 0;
