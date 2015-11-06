@@ -6,8 +6,9 @@ var router = express.Router();
 var passport = require('passport');
 
 router.get("/", function(req, res) {
-	var searchDate = req.query.searchDate;
-	var searchURL = "http://www.thestranger.com/events//" + searchDate + "?keywords=karaoke";
+	var eventDate = req.query.altDate;
+	var displayDate = req.query.searchDate;
+	var searchURL = "http://www.thestranger.com/events//" + eventDate + "?keywords=karaoke";
 	request(searchURL, function (err, resp, html){
 		if(!err && resp.statusCode == 200) {
 			var parsedHTML = $.load(html);
@@ -30,7 +31,7 @@ router.get("/", function(req, res) {
 		    		});
 	    		}
 			}
-	    	var venuesAndTimes = {venues: venueArray, date: searchDate};
+	    	var venuesAndTimes = {venues: venueArray, date: displayDate};
 	    	res.render("calendar", venuesAndTimes);
 		}
 	})

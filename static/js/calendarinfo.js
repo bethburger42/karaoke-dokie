@@ -1,10 +1,13 @@
 $(document).ready(function() {
 	$('#calendar').datepicker({
 	    showOtherMonths: true,
-	    appendText:"(yy-mm-dd)",
+	    appendText:"(mm-dd-yy)",
 	    dateFormat: "yy-mm-dd",
+	    altField: "#alt_date",
+    	altFormat: "yy-mm-dd",
+    	dateFormat: 'mm-dd-yy',
 	    onSelect: function (dateText, inst) {
 	    	console.log(dateText);
 	    }
-	}).datepicker('setDate', new Date());
+	});
 });
